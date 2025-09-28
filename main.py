@@ -16,7 +16,7 @@ async def send_email_api(request: Request):
 async def save_db_api(request: Request):
     data = await request.json()
     employee = data.get("employeeName")
-    days = data.get("leaveDays")
+    days = data.get("leaveDate")
     reason = data.get("reason")
     approved = data.get("approved")
     save_to_db(employee, days, reason, approved)
