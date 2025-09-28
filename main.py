@@ -22,6 +22,12 @@ async def save_db_api(request: Request):
     save_to_db(employee, days, reason, approved)
     return {"status": "db saved"}
 
+@app.post("/api/v1/health")
+async def read_root(request: Request):
+    return {"status": "healthy",
+            "method": request.method,
+            "client": request.client.host}
+
 def send_email(employee, approved):
     status = "approved" if approved else "rejected"
     msg = f"Hello {employee}, your leave request has been {status}."
