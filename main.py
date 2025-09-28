@@ -22,7 +22,7 @@ async def save_db_api(request: Request):
     save_to_db(employee, days, reason, approved)
     return {"status": "db saved"}
 
-@app.post("/api/v1/health")
+@app.get("/api/v1/health")
 async def read_root(request: Request):
     return {"status": "healthy",
             "method": request.method,
