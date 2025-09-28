@@ -41,9 +41,9 @@ def send_email(employee, approved):
 def save_to_db(employee, days, reason, approved):
     conn = mysql.connector.connect(
         host="172.26.8.178",
-        user="root",
-        password="your_password",
-        database="operaton"
+        user="operaton",
+        password="SuperSecurePass123",
+        database="mytestdb"
     )
     cursor = conn.cursor()
     cursor.execute(
